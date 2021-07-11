@@ -72,16 +72,14 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
-    
-    - name: git-bash
-      uses: pkg-src/github-action-git-bash@v1.1
+          
+    - name: git
+      run: git submodule update --init
 
     # Add  MSBuild to the PATH: https://github.com/microsoft/setup-msbuild
     - name: Setup MSBuild.exe
       uses: microsoft/setup-msbuild@v1.0.2
-      
-    - name: git
-      run: git submodule update --init
+
 
     # Execute all unit tests in the solution
     - name: Execute unit tests
