@@ -88,3 +88,9 @@ jobs:
     # Restore the application to populate the obj folder with RuntimeIdentifiers
     - name: Restore the application
       run: msbuild eazdevirt.sln
+      
+    - uses: actions/upload-artifact@v2
+      with:
+        name: my-artifact
+        path: D:\a\eazdevirt\eazdevirt\bin\Debug
+
